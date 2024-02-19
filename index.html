@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿Me perdonas?</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-image: url(https://i.pinimg.com/originals/e2/25/52/e22552594e5ecfdce125c8f4e60c8098.jpg); /* Especifica la URL de la imagen de fondo */
+    background-size: cover;
+    overflow: hidden;
+  }
+  #si-amor, #no-opcion {
+    font-size: 24px;
+    background-color: rgb(1, 175, 1);
+    color: white;
+    z-index: 1; /* Asegura que los botones estén por encima del video */
+  }
+  #no-opcion {
+    background-color: red;
+    color: white;
+  }
+  #te-amo {
+    display: none;
+    font-size: 60px;
+    background-color: rgb(253, 134, 154);
+    color: white;
+    margin-top: 60px;
+    z-index: 1; /* Asegura que el mensaje esté por encima del video */
+  }
+</style>
+</head>
+<body>
+  <h1>¿Me perdonas?</h1>
+  <button id="si-amor" onclick="teAmo()">Si amor</button>
+  <button id="no-opcion" onclick="aumentarSiAmor()">No!</button>
+  <p id="te-amo">Te amo mi amor</p>
+  <script>
+    var tamañoSiAmor = 24; // Tamaño inicial de la opción "Si amor"
+
+    function teAmo() {
+      document.getElementById("si-amor").style.display = "none"; // Oculta la opción "Si amor"
+      document.getElementById("no-opcion").style.display = "none"; // Oculta la opción "No!"
+      document.getElementById("te-amo").style.display = "block"; // Muestra el mensaje "Te amo mi amor"
+    }
+
+    function aumentarSiAmor() {
+      var siAmor = document.getElementById("si-amor");
+      tamañoSiAmor += 5; // Incrementa el tamaño de la opción "Si amor"
+      siAmor.style.fontSize = tamañoSiAmor + "px";
+    }
+  </script>
+</body>
+</html>
